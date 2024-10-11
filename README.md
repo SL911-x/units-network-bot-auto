@@ -1,4 +1,4 @@
-# Units Network Testnet Bot
+# Units Network Testnet Bot Auto
 
 This repository contains a Node.js application that automates transactions on the Units Network Testnet using multiple private keys.
 
