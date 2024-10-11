@@ -157,3 +157,33 @@ const main = async () => {
             console.log(colors.green('Transaction Success!'));
             console.log(colors.green(`  Block Number: ${receipt.blockNumber}`));
             console.log(
+              colors.green(`  Gas Used: ${receipt.gasUsed.toString()}`)
+            );
+          } else {
+            console.log(colors.red('Transaction FAILED'));
+          }
+        } else {
+          console.log(
+            colors.yellow(
+              'Transaction is still pending after multiple retries.'
+            )
+          );
+        }
+      } catch (error) {
+        console.log(
+          colors.red(`Error checking transaction status: ${error.message}`)
+        );
+      }
+
+      console.log();
+    }
+
+    console.log(
+      colors.green(`Finished transactions for address: ${senderAddress}`)
+    );
+  }
+};
+
+main().catch((error) => {
+  console.error(colors.red('An unexpected error occurred:'), error);
+});
